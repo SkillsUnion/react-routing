@@ -30,7 +30,7 @@ export default function App() {
         <Route
           path="/profile"
           element={
-            <RequireAuth redirectTo={"/"} user={false}>
+            <RequireAuth redirectTo={"/"} user={true}>
               <Profile />
             </RequireAuth>
           }
