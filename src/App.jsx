@@ -24,7 +24,7 @@ export default function App() {
 
   const router = createBrowserRouter(
     createRoutesFromElements(
-      <Route path="/react-routing-3.2" element={<Root />}>
+      <Route path="/react-routing-3.2/" element={<Root />}>
         <Route path="/" element={<Home />} />
         <Route path="/api" element={<CallApi />} />
         <Route
