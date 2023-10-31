@@ -25,10 +25,10 @@ export default function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/react-routing-3.2/" element={<Root />}>
-        <Route path="/" element={<Home />} />
-        <Route path="/api" element={<CallApi />} />
+        <Route path="/react-routing-3.2/" element={<Home />} />
+        <Route path="api" element={<CallApi />} />
         <Route
-          path="/profile"
+          path="/react-routing-3.2/profile"
           element={
             <RequireAuth redirectTo={"/"} user={true}>
               <Profile />
@@ -54,8 +54,8 @@ export default function App() {
             }
           />
         </Route>
-        <Route path="/component" element={<Component />} />
-        <Route path="/user/:username" element={<User />} />
+        <Route path="component" element={<Component />} />
+        <Route path="user/:username" element={<User />} />
         <Route path="*" element={<ErrorPage />} />
       </Route>
     )
