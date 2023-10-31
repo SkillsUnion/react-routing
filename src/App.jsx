@@ -6,19 +6,9 @@ import ErrorPage from "./Components/ErrorPage.jsx";
 import Home from "./Components/Home.jsx";
 import "./App.css";
 
-import {
-  createBrowserRouter,
-  RouterProvider,
-  Navigate,
-} from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 export default function App() {
-  const RequireAuth = ({ children, redirectTo, user }) => {
-    console.log(user);
-    const isAuthenticated = user ? true : false;
-    return isAuthenticated ? children : <Navigate to={redirectTo} />;
-  };
-
   const router = createBrowserRouter([
     {
       path: "/",
@@ -26,15 +16,10 @@ export default function App() {
       errorElement: <ErrorPage />,
       children: [
         { path: "/", element: <Home /> },
-
         { path: "api", element: <CallApi /> },
         {
           path: "profile",
-          element: (
-            <RequireAuth redirectTo={"/"} user={true}>
-              <Profile />
-            </RequireAuth>
-          ),
+          element: <Profile />,
           children: [
             {
               path: "edit",
