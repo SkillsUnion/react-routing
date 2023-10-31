@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import PokeCard from "./Pokecard.jsx";
+import PokeCard from "./PokeCard.jsx";
 
 export default function CallApi() {
   const [pokemon, setPokemon] = useState([]);
