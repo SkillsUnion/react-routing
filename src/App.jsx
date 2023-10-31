@@ -10,31 +10,17 @@ import "./App.css";
 import {
   createBrowserRouter,
   RouterProvider,
-  Navigate,
   createRoutesFromElements,
   Route,
 } from "react-router-dom";
 
 export default function App() {
-  const RequireAuth = ({ children, redirectTo, user }) => {
-    console.log(user);
-    const isAuthenticated = user ? true : false;
-    return isAuthenticated ? children : <Navigate to={redirectTo} />;
-  };
-
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<Root />}>
         <Route path="/" element={<Home />} />
         <Route path="/api" element={<CallApi />} />
-        <Route
-          path="/profile"
-          element={
-            <RequireAuth redirectTo={"/"} user={false}>
-              <Profile />
-            </RequireAuth>
-          }
-        >
+        <Route path="/profile" element={<Profile />}>
           <Route
             path="edit"
             element={
