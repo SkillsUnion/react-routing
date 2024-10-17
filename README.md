@@ -1,4 +1,4 @@
-# Rocket Academy Coding Bootcamp: React Router DOM
+# React Router DOM
 
 ## Available Scripts
 
